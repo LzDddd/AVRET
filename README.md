@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ### Step 2: Prepare the visual features:
 * Download the pre-trained visual features from [SLT](https://github.com/neccam/slt).
-* Or, using the [Efficientnet-b0](https://github.com/lukemelas/EfficientNet-PyTorch) instead of the Encoder in [VideoMoCo](https://github.com/tinapan-pt/VideoMoCo) and pre-train the Discriminator by VideoMoCo framework. Then, using the pre-trained Efficientnet-b0 to extract visual features and pickle it like [SLT](https://github.com/neccam/slt).
+* Or, using the [Efficientnet-b0](https://github.com/lukemelas/EfficientNet-PyTorch) instead of the Encoder in [VideoMoCo](https://github.com/tinapan-pt/VideoMoCo) and pre-train the Discriminator by VideoMoCo framework. Then, using the pre-trained Efficientnet-b0 to extract visual features and compressed it by gzip (like [SLT](https://github.com/neccam/slt)).
 ## Usage
 Firstly, make sure the data folder is as follows:
 ```shell
@@ -30,9 +30,13 @@ AVRET
     └── phoenix14t.pami0.train
 ```
 
-Training: `python -m signjoey train configs/sign.yaml`
+Training
 
-Evaluation: `python -m signjoey test configs/sign.yaml  --ckpt <ckpt_path> --output_path <results_output_path>`
+`python -m signjoey train configs/sign.yaml`
+
+Evaluation
+
+`python -m signjoey test configs/sign.yaml  --ckpt <ckpt_path> --output_path <results_output_path>`
 
 ## TODO
 - [X] *Initial code release.*
