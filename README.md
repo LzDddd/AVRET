@@ -8,7 +8,7 @@ The code is based on [SLT](https://github.com/neccam/slt) but modified to realiz
 
 ## Environment
 ```shell
-git clone https://github.com/LzDddd/AVRET
+git clone https://github.com/LzDddd/AVRET.git
 cd AVRET
 conda create -n avret_env python==3.7
 conda activate avret_env
