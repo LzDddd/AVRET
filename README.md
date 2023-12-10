@@ -33,6 +33,10 @@ AVRET
     └── phoenix14t.pami0.train
 ```
 
+Pre-training
+
+`python -m signjoey vlp_pretrain configs/sign_vlp.yaml`
+
 Training
 
 `python -m signjoey train configs/sign.yaml`
