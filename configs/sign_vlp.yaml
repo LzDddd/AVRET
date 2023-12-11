@@ -1,6 +1,6 @@
 name: sign_experiment
 data:
-    data_path: D:/Sign_data/PHOENIX-2014-T/processed_data/
+    data_path: data/
     version: phoenix_2014_trans
     sgn: sign
     txt: text
