@@ -212,7 +212,6 @@ class SpatialEmbeddings(nn.Module):
                 self.scale_factor = math.sqrt(self.embedding_dim)
 
         # tin conv layer
-        # self.ln_emb_to_inp = nn.Linear(embedding_dim, input_size)
         self.tin_linear1 = nn.Sequential(
             nn.Conv1d(self.input_size, 768, kernel_size=5, stride=1, padding=0),
             nn.BatchNorm1d(768),
@@ -252,7 +251,6 @@ class SpatialEmbeddings(nn.Module):
                     tin_o2 = self.tin_linear2(tin_o1)
                     tin_o2 = nn.Linear(tin_o2.shape[-1], temp_v_ct.shape[-1]).to(temp_v_ct.device)(tin_o2)
                     temp_v_ct = tin_o2.permute(0, 2, 1).contiguous()
-                    # temp_v_ct = self.ln_emb_to_inp(temp_v_ct)
                 else:
                     temp_v_ct = self.ln(temp_v_ct)
                 x_t[v_no, :src_len[v_no], :] = temp_v_ct
