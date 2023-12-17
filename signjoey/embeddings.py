@@ -212,15 +212,15 @@ class SpatialEmbeddings(nn.Module):
                 self.scale_factor = math.sqrt(self.embedding_dim)
 
         # tin conv layer
-        self.ln_emb_to_inp = nn.Linear(embedding_dim, input_size)
+        # self.ln_emb_to_inp = nn.Linear(embedding_dim, input_size)
         self.tin_linear1 = nn.Sequential(
-            nn.Conv1d(self.input_size, embedding_dim, kernel_size=3, stride=1, padding=0),
-            nn.BatchNorm1d(embedding_dim),
+            nn.Conv1d(self.input_size, 768, kernel_size=5, stride=1, padding=0),
+            nn.BatchNorm1d(768),
             get_activation('relu', inplace=True),
             nn.MaxPool1d(kernel_size=1, ceil_mode=False)
         )
         self.tin_linear2 = nn.Sequential(
-            nn.Conv1d(embedding_dim, embedding_dim, kernel_size=3, stride=1, padding=0),
+            nn.Conv1d(768, embedding_dim, kernel_size=5, stride=1, padding=0),
             nn.BatchNorm1d(embedding_dim),
             get_activation('relu', inplace=True),
             nn.MaxPool1d(kernel_size=1, ceil_mode=False)
@@ -239,6 +239,7 @@ class SpatialEmbeddings(nn.Module):
         """
         if src_len is not None:
             b, n, t = x.shape
+            x_t = torch.zeros((b, n, 512)).to(x.device)
             assert b == src_len.shape[0]
             src_len = src_len.int()
             for v_no in range(b):
@@ -251,10 +252,13 @@ class SpatialEmbeddings(nn.Module):
                     tin_o2 = self.tin_linear2(tin_o1)
                     tin_o2 = nn.Linear(tin_o2.shape[-1], temp_v_ct.shape[-1]).to(temp_v_ct.device)(tin_o2)
                     temp_v_ct = tin_o2.permute(0, 2, 1).contiguous()
-                    temp_v_ct = self.ln_emb_to_inp(temp_v_ct)
-                x[v_no, :src_len[v_no], :] = temp_v_ct
-
-        x = self.ln(x)
+                    # temp_v_ct = self.ln_emb_to_inp(temp_v_ct)
+                else:
+                    temp_v_ct = self.ln(temp_v_ct)
+                x_t[v_no, :src_len[v_no], :] = temp_v_ct
+            x = x_t
+        else:
+            x = self.ln(x)
 
         if self.norm_type:
             x = self.norm(x, mask)
