@@ -304,7 +304,7 @@ class TransformerEncoderLayer(nn.Module):
         self.src_src_att = MultiHeadedAttention(num_heads, size, dropout=dropout)
         self.feed_forward = PositionwiseFeedForward(
             input_size=size, ff_size=ff_size, dropout=dropout, use_gfm=False
-        )
+        ) 
         self.dropout = nn.Dropout(dropout)
         self.size = size
 
