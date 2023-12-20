@@ -229,7 +229,7 @@ class SignModel(nn.Module):
         """
 
         return self.encoder(
-            embed_src=self.sgn_embed(x=sgn, mask=sgn_mask, src_len=sgn_length),
+            embed_src=self.sgn_embed(x=sgn, mask=sgn_mask, src_len=None),
             src_length=sgn_length,
             mask=sgn_mask
         )
