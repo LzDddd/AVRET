@@ -244,7 +244,7 @@ class SpatialEmbeddings(nn.Module):
             for v_no in range(b):
                 temp_v_ct = x[v_no, :src_len[v_no], :]
                 temp_v_ct = temp_v_ct.unsqueeze(0)
-                if temp_v_ct.shape[1] > 470:
+                if temp_v_ct.shape[1] > 14:
                     temp_v_ct = temp_v_ct.permute(0, 2, 1).contiguous()
                     tin_o1 = self.tin_linear1(temp_v_ct)
 
