@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ### Step 2: Prepare the visual features:
 * Download the pre-trained visual features from [SLT](https://github.com/neccam/slt).
-* Or, using the [Efficientnet-b0](https://github.com/lukemelas/EfficientNet-PyTorch) instead of the Encoder in [VideoMoCo](https://github.com/tinapan-pt/VideoMoCo) and pre-train the Discriminator by VideoMoCo framework. Then, using the pre-trained Efficientnet-b0 to extract visual features and compressed it by gzip (like [SLT](https://github.com/neccam/slt)). 
+* (Simple version) Or, using the [Efficientnet-b0](https://github.com/lukemelas/EfficientNet-PyTorch) instead of the Encoder in [VideoMoCo](https://github.com/tinapan-pt/VideoMoCo) and pre-train the Discriminator by VideoMoCo framework. Then, using the pre-trained Efficientnet-b0 to extract visual features and compressed it by gzip (like [SLT](https://github.com/neccam/slt)). 
 ## Usage
 Firstly, make sure the data folder is as follows:
 ```shell
