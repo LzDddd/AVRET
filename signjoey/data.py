@@ -66,8 +66,6 @@ def load_data(data_cfg: dict) -> (Dataset, Dataset, Dataset, Vocabulary, Vocabul
         if level == "char":
             return list(text)
         else:
-            # jieba.load_userdict('D:/Sign_data/gtgz/text/dict.txt')
-            # return jieba.lcut(text, cut_all=False)
             return text.split()
 
     def tokenize_features(features):
