@@ -157,17 +157,3 @@ class TextTransformerEncoder(Encoder):
             len(self.layers),
             self.layers[0].src_src_att.num_heads,
         )
-
-
-# class MBartCLIP(nn.Module):
-#     def __init__(self, config='data/pretrain_models/MBart_trimmed', inplanes=1024, planes=512, head_type='identy'):
-#         super(MBartCLIP, self).__init__()
-#
-#         self.model_txt = MBartForConditionalGeneration.from_pretrained().get_encoder()
-#
-#         self.lm_head = nn.Linear(inplanes, planes, bias=False) if head_type == 'linear' else nn.Identity()
-#
-#     def forward(self, tgt_input, txt_mask):
-#         txt_logits = self.model_txt(input_ids=tgt_input, attention_mask=txt_mask)[0]
-#         output = txt_logits[torch.arange(txt_logits.shape[0]), tgt_input.argmax(dim=-1)]
-#         return self.lm_head(output), txt_logits
