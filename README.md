@@ -2,7 +2,7 @@
 
 # Improving End-to-end Sign Language Translation with Adaptive Video Representation Enhanced Transformer
 
-This repo contains the training and evaluation code for the sign language translation (SLT) of RWTH-PHOENIX-Weather 2014 T.
+This repo contains the training and evaluation code for the sign language translation (SLT) of gloss-based RWTH-PHOENIX-Weather 2014 T.
 
 The code is based on [SLT](https://github.com/neccam/slt) but modified to realize SLT without gloss in training.
 
