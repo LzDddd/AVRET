@@ -23,7 +23,7 @@ pip install -r requirements.txt
 Download the pre-trained visual features from [SLT](https://github.com/neccam/slt) project.
 
 ### Step 3: Pack the visual features:
-Following the [SLT](https://github.com/neccam/slt) project to compressed the features by gzip and pickle. Then, put them into `./data/`
+Following the [SLT](https://github.com/neccam/slt) project to put them into `./data/`
 
 ## Usage
 Firstly, make sure the data folder is as follows:
