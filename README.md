@@ -20,7 +20,7 @@ pip install -r requirements.txt
 * For Gloss-based features of PH14T, please download the pre-trained visual features from [SLT](https://github.com/neccam/slt) project.
 
 ### Step 2: Pack the visual features:
-Following the [SLT](https://github.com/neccam/slt) project to compressed the features by gzip and pickle. Then, put them into `AVRET-PH14T/data/`
+Following the [SLT](https://github.com/neccam/slt) project to compressed the features by gzip and pickle. Then, put them into `AVRET/data/`
 
 ## Usage
 Firstly, make sure the data folder is as follows:
@@ -42,6 +42,6 @@ Evaluation command
 
 ## Others
 
-* For gloss-free features and codes of PH14T, please see [GFSLT-VLP-AVRET-PH14T]().
-* For gloss-based features and codes of CSL-Daily, please see [TwoStreamNetwork]().
-* For gloss-free features and codes of CSL-Daily, please see [GFSLT-VLP-AVRET-CSL]().
+* For gloss-free features and codes of PH14T, please see [GFSLT-VLP-AVRET-PH14T](https://github.com/LzDddd/GFSLT-VLP-AVRET-PH14T).
+* For gloss-based features and codes of CSL-Daily, please see [TwoStreamNetwork](https://github.com/LzDddd/TwoStreamNetwork).
+* For gloss-free features and codes of CSL-Daily, please see [GFSLT-VLP-AVRET-CSL](https://github.com/LzDddd/GFSLT-VLP-AVRET-CSL).
