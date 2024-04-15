@@ -43,5 +43,5 @@ Evaluation command
 ## Others
 
 * For gloss-free features and codes of PH14T, please see [GFSLT-VLP-AVRET-PH14T](https://github.com/LzDddd/GFSLT-VLP-AVRET-PH14T).
-* For gloss-based features and codes of CSL-Daily, please see [TwoStreamNetwork](https://github.com/LzDddd/TwoStreamNetwork).
+* For gloss-based features and codes of CSL-Daily, please see [TwoStreamNetwork](https://github.com/LzDddd/TwoStreamNetwork-AVRET).
 * For gloss-free features and codes of CSL-Daily, please see [GFSLT-VLP-AVRET-CSL](https://github.com/LzDddd/GFSLT-VLP-AVRET-CSL).
